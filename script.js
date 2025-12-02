@@ -30,6 +30,27 @@
                 bottomNav.style.zIndex = '2147483647';
                 bottomNav.style.position = 'fixed';
                 bottomNav.style.bottom = '0';
+                bottomNav.style.left = '0';
+                bottomNav.style.right = '0';
+                bottomNav.style.width = '100%';
+                
+                // Check visibility after render
+                setTimeout(() => {
+                    const rect = bottomNav.getBoundingClientRect();
+                    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+                    console.log('Bottom nav check:', {
+                        rect: rect,
+                        viewportHeight: viewportHeight,
+                        isVisible: rect.bottom <= viewportHeight && rect.top >= 0
+                    });
+                    
+                    // If not fully visible, adjust
+                    if (rect.bottom > viewportHeight) {
+                        const offset = rect.bottom - viewportHeight;
+                        bottomNav.style.bottom = `${offset}px`;
+                        console.log('Adjusted bottom nav by:', offset);
+                    }
+                }, 500);
             }
         },
 

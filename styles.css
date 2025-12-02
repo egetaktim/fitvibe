@@ -555,16 +555,8 @@ body {
     opacity: 1 !important;
     pointer-events: auto !important;
     height: auto !important;
-}
-
-/* Mobile Safari - position above browser bar */
-@supports (-webkit-touch-callout: none) {
-    @media (max-width: 768px) {
-        .bottom-nav {
-            bottom: 0 !important;
-            padding-bottom: calc(25px + env(safe-area-inset-bottom, 0px) + 50px) !important;
-        }
-    }
+    will-change: transform !important;
+    -webkit-overflow-scrolling: touch !important;
 }
 
 .nav-item {
