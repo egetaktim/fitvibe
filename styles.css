@@ -1227,7 +1227,8 @@ button:not(:disabled):active, .reserve-btn:not(:disabled):active, .match-btn:act
     .bottom-nav {
         bottom: 0;
         bottom: env(safe-area-inset-bottom, 0);
-        padding-bottom: calc(15px + env(safe-area-inset-bottom, 0));
+        padding-bottom: calc(25px + env(safe-area-inset-bottom, 0));
+        z-index: 200;
     }
     
     .notification {
