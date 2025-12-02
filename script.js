@@ -16,7 +16,33 @@
             this.initPages();
             this.bindEvents();
             this.initPWA();
+            this.ensureBottomNavVisible();
             console.log('FitVibe App initialized');
+        },
+
+        ensureBottomNavVisible: function() {
+            const bottomNav = document.querySelector('.bottom-nav');
+            if (bottomNav) {
+                // Force visibility
+                bottomNav.style.display = 'flex';
+                bottomNav.style.visibility = 'visible';
+                bottomNav.style.opacity = '1';
+                bottomNav.style.zIndex = '2147483647';
+                bottomNav.style.position = 'fixed';
+                bottomNav.style.bottom = '0';
+                
+                // Check if it's actually visible
+                setTimeout(() => {
+                    const rect = bottomNav.getBoundingClientRect();
+                    console.log('Bottom nav position:', rect);
+                    if (rect.height === 0 || rect.bottom < window.innerHeight - 10) {
+                        console.warn('Bottom nav might be hidden, forcing visibility');
+                        bottomNav.style.display = 'flex !important';
+                        bottomNav.style.visibility = 'visible !important';
+                        bottomNav.style.opacity = '1 !important';
+                    }
+                }, 100);
+            }
         },
 
         cacheElements: function() {
