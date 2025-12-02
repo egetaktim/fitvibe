@@ -21,51 +21,10 @@
         },
 
         ensureBottomNavVisible: function() {
+            // Simple check - just ensure it exists and is visible
             const bottomNav = document.querySelector('.bottom-nav');
             if (bottomNav) {
-                // Force visibility
                 bottomNav.style.display = 'flex';
-                bottomNav.style.visibility = 'visible';
-                bottomNav.style.opacity = '1';
-                bottomNav.style.zIndex = '2147483647';
-                bottomNav.style.position = 'fixed';
-                bottomNav.style.left = '0';
-                bottomNav.style.right = '0';
-                bottomNav.style.width = '100%';
-                
-                // Detect mobile device
-                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-                
-                if (isMobile) {
-                    // On mobile, check if browser bar is covering navigation
-                    setTimeout(() => {
-                        const rect = bottomNav.getBoundingClientRect();
-                        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-                        const navHeight = rect.height;
-                        const navBottom = rect.bottom;
-                        
-                        // If nav is below viewport (covered by browser bar)
-                        if (navBottom > viewportHeight - 5) {
-                            // Calculate browser bar height (usually 44-50px on iOS)
-                            const browserBarHeight = isIOS ? 50 : 44;
-                            const newBottom = browserBarHeight;
-                            bottomNav.style.bottom = `${newBottom}px`;
-                            
-                            // Also update app-content padding
-                            const appContent = document.querySelector('.app-content');
-                            if (appContent) {
-                                appContent.style.paddingBottom = `calc(80px + ${browserBarHeight}px + env(safe-area-inset-bottom, 0px))`;
-                            }
-                        } else {
-                            // Normal position
-                            bottomNav.style.bottom = '0';
-                        }
-                    }, 300);
-                } else {
-                    // Desktop - normal position
-                    bottomNav.style.bottom = '0';
-                }
             }
         },
 
