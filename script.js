@@ -23,33 +23,16 @@
         ensureBottomNavVisible: function() {
             const bottomNav = document.querySelector('.bottom-nav');
             if (bottomNav) {
-                // Detect Safari browser bar height (usually 44-50px on iPhone)
-                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-                const browserBarHeight = isIOS ? 50 : 0;
-                
-                // Force visibility and position above browser bar
+                // Force visibility - keep at bottom, normal size
                 bottomNav.style.display = 'flex';
                 bottomNav.style.visibility = 'visible';
                 bottomNav.style.opacity = '1';
                 bottomNav.style.zIndex = '2147483647';
                 bottomNav.style.position = 'fixed';
-                bottomNav.style.bottom = `${browserBarHeight}px`;
-                bottomNav.style.bottom = `calc(${browserBarHeight}px + env(safe-area-inset-bottom, 0px))`;
-                
-                // Check if it's actually visible
-                setTimeout(() => {
-                    const rect = bottomNav.getBoundingClientRect();
-                    const viewportHeight = window.innerHeight;
-                    console.log('Bottom nav position:', rect);
-                    console.log('Viewport height:', viewportHeight);
-                    
-                    // If nav is below viewport, adjust position
-                    if (rect.top > viewportHeight - 100) {
-                        const newBottom = Math.max(50, viewportHeight - rect.height - 10);
-                        bottomNav.style.bottom = `${newBottom}px`;
-                        console.log('Adjusted bottom nav position to:', newBottom);
-                    }
-                }, 200);
+                bottomNav.style.bottom = '0';
+                bottomNav.style.height = 'auto';
+                bottomNav.style.minHeight = 'auto';
+                bottomNav.style.padding = '10px 0';
             }
         },
 
