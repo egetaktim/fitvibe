@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitVibe - Spor Haritası & Rezervasyon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="iphone-frame">
+            <!-- Notch Details -->
+            <div class="notch-camera"></div>
+            <div class="notch-speaker"></div>
+            <div class="notch-sensor left"></div>
+            <div class="notch-sensor right"></div>
+            
+            <!-- App Content Area -->
+            <div class="app-content" id="appContent">
+                <!-- App Header -->
+                <div class="app-header">
+                    <div class="header-top">
+                        <div class="profile-icon-wrapper" data-action="profile">
+                            <div class="profile-icon">👤</div>
+                            <span class="notification-badge">1</span>
+                        </div>
+                        <div class="logo-small">
+                            <div class="logo-icon">🏋️</div>
+                            <div class="logo-swoosh"></div>
+                        </div>
+                        <div class="settings-icon">⚙️</div>
+                    </div>
+                    <div class="greeting">
+                        <h2>Merhaba, Ahmet!</h2>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="main-content" id="homePage">
+                    <!-- Main Action Cards -->
+                    <div class="main-action-cards">
+                        <div class="main-action-card equipment-card" data-action="equipment">
+                            <div class="card-content">
+                                <h3>EKİPMAN KİRALAMA</h3>
+                                <div class="card-icons">
+                                    <span class="card-icon">👷</span>
+                                    <span class="card-icon">🚴</span>
+                                    <span class="card-icon">🏋️</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="main-action-card reservation-card" data-action="reservation">
+                            <div class="card-content">
+                                <h3>TESİS & SAHA REZERVASYON</h3>
+                                <div class="card-icons">
+                                    <span class="card-icon">📍</span>
+                                    <span class="card-icon">📅</span>
+                                    <span class="card-icon">🏃</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="main-action-card find-card" data-action="find">
+                            <div class="card-content">
+                                <h3>RAKIP & TAKIM BUL</h3>
+                                <div class="card-icons">
+                                    <span class="card-icon">🏋️</span>
+                                    <span class="card-icon">💬</span>
+                                    <span class="card-icon">👥</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Today's Activities -->
+                    <div class="section-header">
+                        <h2>Bugünkü Aktiviteler</h2>
+                    </div>
+
+                    <div class="activities-scroll">
+                        <div class="activity-card">
+                            <div class="activity-map">🗺️</div>
+                            <div class="activity-info">
+                                <div class="activity-item">
+                                    <span class="activity-label">Koşu Parkuru:</span>
+                                    <span class="activity-value">5km</span>
+                                </div>
+                                <div class="activity-item">
+                                    <span class="activity-label">Basketbol Maçı:</span>
+                                    <span class="activity-value">19:00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="activity-card">
+                            <div class="activity-map">🗺️</div>
+                            <div class="activity-info">
+                                <div class="activity-item">
+                                    <span class="activity-label">Futbol Antrenmanı:</span>
+                                    <span class="activity-value">18:00</span>
+                                </div>
+                                <div class="activity-item">
+                                    <span class="activity-label">Saha:</span>
+                                    <span class="activity-value">Merkez Stad</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="activity-card">
+                            <div class="activity-map">🗺️</div>
+                            <div class="activity-info">
+                                <div class="activity-item">
+                                    <span class="activity-label">Yoga Dersi:</span>
+                                    <span class="activity-value">20:00</span>
+                                </div>
+                                <div class="activity-item">
+                                    <span class="activity-label">Online</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Page (Hidden by default) -->
+                <div class="page profile-page" id="profilePage" style="display: none;">
+                    <div class="page-header">
+                        <h2>Profil</h2>
+                    </div>
+                    <div class="profile-content">
+                        <div class="profile-avatar-large">
+                            <div class="avatar-circle">👤</div>
+                        </div>
+                        <h3>Ahmet Yılmaz</h3>
+                        <p class="profile-email">ahmet@example.com</p>
+                        
+                        <div class="profile-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">12</div>
+                                <div class="stat-label">Rezervasyon</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">8</div>
+                                <div class="stat-label">Aktif Maç</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">4.8</div>
+                                <div class="stat-label">Puan</div>
+                            </div>
+                        </div>
+
+                        <div class="profile-menu">
+                            <div class="menu-item">
+                                <span class="menu-icon">📅</span>
+                                <span class="menu-text">Rezervasyonlarım</span>
+                                <span class="menu-arrow">›</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="menu-icon">⭐</span>
+                                <span class="menu-text">Değerlendirmelerim</span>
+                                <span class="menu-arrow">›</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="menu-icon">⚙️</span>
+                                <span class="menu-text">Ayarlar</span>
+                                <span class="menu-arrow">›</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="menu-icon">ℹ️</span>
+                                <span class="menu-text">Hakkında</span>
+                                <span class="menu-arrow">›</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Page (Hidden by default) -->
+                <div class="page map-page" id="mapPage" style="display: none;">
+                    <div class="page-header">
+                        <h2>Harita</h2>
+                    </div>
+                    <div class="map-content">
+                        <div class="map-placeholder">
+                            <span class="map-icon-large">🗺️</span>
+                            <p>Harita görünümü</p>
+                            <p class="map-subtitle">Yakınındaki tesisleri görüntüle</p>
+                        </div>
+                        <div class="map-filters">
+                            <button class="filter-btn active">Tümü</button>
+                            <button class="filter-btn">⚽ Futbol</button>
+                            <button class="filter-btn">🏀 Basketbol</button>
+                            <button class="filter-btn">🏃 Koşu</button>
+                            <button class="filter-btn">🚴 Bisiklet</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Messages Page (Hidden by default) -->
+                <div class="page messages-page" id="messagesPage" style="display: none;">
+                    <div class="page-header">
+                        <h2>Mesajlar</h2>
+                    </div>
+                    <div class="messages-content">
+                        <div class="message-item">
+                            <div class="message-avatar">👤</div>
+                            <div class="message-info">
+                                <div class="message-header">
+                                    <span class="message-name">Mehmet Kaya</span>
+                                    <span class="message-time">14:30</span>
+                                </div>
+                                <div class="message-preview">Maç için hazır mısın?</div>
+                            </div>
+                        </div>
+                        <div class="message-item">
+                            <div class="message-avatar">👤</div>
+                            <div class="message-info">
+                                <div class="message-header">
+                                    <span class="message-name">Ayşe Demir</span>
+                                    <span class="message-time">12:15</span>
+                                </div>
+                                <div class="message-preview">Rezervasyon onaylandı!</div>
+                            </div>
+                        </div>
+                        <div class="message-item">
+                            <div class="message-avatar">👤</div>
+                            <div class="message-info">
+                                <div class="message-header">
+                                    <span class="message-name">Takım Alpha</span>
+                                    <span class="message-time">Dün</span>
+                                </div>
+                                <div class="message-preview">Yarın maç var, katılır mısın?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Page (Hidden by default) -->
+                <div class="page team-page" id="teamPage" style="display: none;">
+                    <div class="page-header">
+                        <h2>Takım</h2>
+                    </div>
+                    <div class="team-content">
+                        <div class="team-card">
+                            <h3>Takımım</h3>
+                            <div class="team-members">
+                                <div class="member-avatar">👤</div>
+                                <div class="member-avatar">👤</div>
+                                <div class="member-avatar">👤</div>
+                                <div class="member-avatar">+5</div>
+                            </div>
+                        </div>
+                        <div class="team-section">
+                            <h3>Takım Arkadaşı Ara</h3>
+                            <button class="team-action-btn">Ara</button>
+                        </div>
+                        <div class="team-section">
+                            <h3>Rakip Takım Bul</h3>
+                            <button class="team-action-btn">Bul</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Navigation -->
+                <div class="bottom-nav">
+                    <div class="nav-item active" data-page="home">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-label">Ana Sayfa</span>
+                        <span class="nav-dot"></span>
+                    </div>
+                    <div class="nav-item" data-page="map">
+                        <span class="nav-icon">📍</span>
+                        <span class="nav-label">Harita</span>
+                    </div>
+                    <div class="nav-item" data-page="messages">
+                        <span class="nav-icon">💬</span>
+                        <span class="nav-label">Mesajlar</span>
+                    </div>
+                    <div class="nav-item" data-page="team">
+                        <span class="nav-icon">👥</span>
+                        <span class="nav-label">Takım</span>
+                    </div>
+                    <div class="nav-item" data-page="profile">
+                        <span class="nav-icon">👤</span>
+                        <span class="nav-label">Profil</span>
+                    </div>
+                </div>
+
+                <!-- Profile Page (Hidden by default) -->
+                <div class="page profile-page" id="profilePage" style="display: none;">
+                    <div class="page-header">
+                        <h2>Profil</h2>
+                    </div>
+                    <div class="profile-content">
+                        <div class="profile-avatar-large">
+                            <div class="avatar-circle">👤</div>
+                        </div>
+                        <h3>Ahmet Yılmaz</h3>
+                        <p class="profile-email">ahmet@example.com</p>
+                        
+                        <div class="profile-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">12</div>
+                                <div class="stat-label">Rezervasyon</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">8</div>
+                                <div class="stat-label">Aktif Maç</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">4.8</div>
+                                <div class="stat-label">Puan</div>
+                            </div>
+                        </div>
+
+                        <div class="profile-menu">
+                            <div class="menu-item">
+                                <span class="menu-icon">📅</span>
+                                <span class="menu-text">Rezervasyonlarım</span>
+                                <span class="menu-arrow">›</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="menu-icon">⭐</span>
+                                <span class="menu-text">Değerlendirmelerim</span>
+                                <span class="menu-arrow">›</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="menu-icon">⚙️</span>
+                                <span class="menu-text">Ayarlar</span>
+                                <span class="menu-arrow">›</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="menu-icon">ℹ️</span>
+                                <span class="menu-text">Hakkında</span>
+                                <span class="menu-arrow">›</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Page (Hidden by default) -->
+                <div class="page map-page" id="mapPage" style="display: none;">
+                    <div class="page-header">
+                        <h2>Harita</h2>
+                    </div>
+                    <div class="map-content">
+                        <div class="map-placeholder">
+                            <span class="map-icon-large">🗺️</span>
+                            <p>Harita görünümü</p>
+                            <p class="map-subtitle">Yakınındaki tesisleri görüntüle</p>
+                        </div>
+                        <div class="map-filters">
+                            <button class="filter-btn active">Tümü</button>
+                            <button class="filter-btn">⚽ Futbol</button>
+                            <button class="filter-btn">🏀 Basketbol</button>
+                            <button class="filter-btn">🏃 Koşu</button>
+                            <button class="filter-btn">🚴 Bisiklet</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Messages Page (Hidden by default) -->
+                <div class="page messages-page" id="messagesPage" style="display: none;">
+                    <div class="page-header">
+                        <h2>Mesajlar</h2>
+                    </div>
+                    <div class="messages-content">
+                        <div class="message-item">
+                            <div class="message-avatar">👤</div>
+                            <div class="message-info">
+                                <div class="message-header">
+                                    <span class="message-name">Mehmet Kaya</span>
+                                    <span class="message-time">14:30</span>
+                                </div>
+                                <div class="message-preview">Maç için hazır mısın?</div>
+                            </div>
+                        </div>
+                        <div class="message-item">
+                            <div class="message-avatar">👤</div>
+                            <div class="message-info">
+                                <div class="message-header">
+                                    <span class="message-name">Ayşe Demir</span>
+                                    <span class="message-time">12:15</span>
+                                </div>
+                                <div class="message-preview">Rezervasyon onaylandı!</div>
+                            </div>
+                        </div>
+                        <div class="message-item">
+                            <div class="message-avatar">👤</div>
+                            <div class="message-info">
+                                <div class="message-header">
+                                    <span class="message-name">Takım Alpha</span>
+                                    <span class="message-time">Dün</span>
+                                </div>
+                                <div class="message-preview">Yarın maç var, katılır mısın?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Page (Hidden by default) -->
+                <div class="page team-page" id="teamPage" style="display: none;">
+                    <div class="page-header">
+                        <h2>Takım</h2>
+                    </div>
+                    <div class="team-content">
+                        <div class="team-card">
+                            <h3>Takımım</h3>
+                            <div class="team-members">
+                                <div class="member-avatar">👤</div>
+                                <div class="member-avatar">👤</div>
+                                <div class="member-avatar">👤</div>
+                                <div class="member-avatar">+5</div>
+                            </div>
+                        </div>
+                        <div class="team-section">
+                            <h3>Takım Arkadaşı Ara</h3>
+                            <button class="team-action-btn">Ara</button>
+                        </div>
+                        <div class="team-section">
+                            <h3>Rakip Takım Bul</h3>
+                            <button class="team-action-btn">Bul</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- iPhone Home Indicator -->
+            <div class="home-indicator"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
