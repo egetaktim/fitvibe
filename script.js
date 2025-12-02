@@ -23,16 +23,29 @@
         ensureBottomNavVisible: function() {
             const bottomNav = document.querySelector('.bottom-nav');
             if (bottomNav) {
-                // Force visibility - keep at bottom, normal size
+                // Force visibility - position above browser bar (60px from bottom)
                 bottomNav.style.display = 'flex';
                 bottomNav.style.visibility = 'visible';
                 bottomNav.style.opacity = '1';
                 bottomNav.style.zIndex = '2147483647';
                 bottomNav.style.position = 'fixed';
-                bottomNav.style.bottom = '0';
+                bottomNav.style.bottom = '60px';
                 bottomNav.style.height = 'auto';
-                bottomNav.style.minHeight = 'auto';
-                bottomNav.style.padding = '10px 0';
+                
+                // Double check it's visible after a short delay
+                setTimeout(() => {
+                    const rect = bottomNav.getBoundingClientRect();
+                    const viewportHeight = window.innerHeight;
+                    console.log('Bottom nav rect:', rect);
+                    console.log('Viewport height:', viewportHeight);
+                    
+                    // If nav is not visible, adjust
+                    if (rect.top > viewportHeight - 50) {
+                        const newBottom = Math.max(60, viewportHeight - rect.height - 20);
+                        bottomNav.style.bottom = `${newBottom}px`;
+                        console.log('Adjusted bottom nav to:', newBottom);
+                    }
+                }, 300);
             }
         },
 
