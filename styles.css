@@ -6,116 +6,18 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: #1a1a1a;
+    margin: 0;
+    padding: 0;
     width: 100%;
-}
-
-.iphone-frame {
-    width: 375px;
-    height: 812px;
-    background: #000;
-    border-radius: 50px;
-    padding: 8px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    position: relative;
+    height: 100vh;
     overflow: hidden;
-}
-
-/* iPhone Notch - Main notch shape (more realistic) */
-.iphone-frame::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 140px;
-    height: 30px;
-    background: #000;
-    border-radius: 0 0 18px 18px;
-    z-index: 10;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-/* Notch inner detail */
-.iphone-frame::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 130px;
-    height: 24px;
-    background: linear-gradient(to bottom, rgba(20, 20, 20, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
-    border-radius: 0 0 15px 15px;
-    z-index: 11;
-    pointer-events: none;
-}
-
-/* Notch details - camera (center) */
-.notch-camera {
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 7px;
-    height: 7px;
-    background: radial-gradient(circle, #2a2a2a 0%, #0a0a0a 100%);
-    border-radius: 50%;
-    z-index: 12;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 2px rgba(0, 0, 0, 0.5);
-}
-
-/* Notch speaker (top center) */
-.notch-speaker {
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 56px;
-    height: 5px;
-    background: #0a0a0a;
-    border-radius: 3px;
-    z-index: 12;
-    margin-left: -28px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.95);
-}
-
-/* Face ID sensors (left and right of speaker) */
-.notch-sensor {
-    position: absolute;
-    top: 9px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 4px;
-    background: #0a0a0a;
-    border-radius: 50%;
-    z-index: 12;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.95);
-}
-
-.notch-sensor.left {
-    margin-left: -38px;
-}
-
-.notch-sensor.right {
-    margin-left: 38px;
 }
 
 .app-content {
     background: #1a1a1a;
-    height: calc(100% - 34px);
+    width: 100%;
+    height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
@@ -451,18 +353,6 @@ body {
     opacity: 1;
 }
 
-/* Home Indicator */
-.home-indicator {
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 134px;
-    height: 5px;
-    background: #000;
-    border-radius: 3px;
-    z-index: 10;
-}
 
 /* Scrollbar Styling */
 .app-content::-webkit-scrollbar {
@@ -805,17 +695,27 @@ body {
     transform: scale(0.98);
 }
 
-/* Responsive */
-@media (max-width: 420px) {
-    .iphone-frame {
-        width: 100%;
-        max-width: 375px;
-        height: 100vh;
-        max-height: 812px;
-        border-radius: 0;
-    }
-
+/* Responsive - Mobile First */
+@media (max-width: 768px) {
     body {
-        padding: 0;
+        height: 100vh;
+        height: -webkit-fill-available;
+    }
+    
+    .app-content {
+        height: 100vh;
+        height: -webkit-fill-available;
+    }
+}
+
+/* Safe area for notched devices */
+@supports (padding: max(0px)) {
+    .app-content {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+    
+    .bottom-nav {
+        padding-bottom: calc(25px + env(safe-area-inset-bottom));
     }
 }
