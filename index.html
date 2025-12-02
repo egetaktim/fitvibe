@@ -2,21 +2,30 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>FitVibe-Sena</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="FitVibe - Spor Haritası & Rezervasyon Sistemi">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="FitVibe">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="iphone-frame">
-            <!-- Notch Details -->
-            <div class="notch-camera"></div>
-            <div class="notch-speaker"></div>
-            <div class="notch-sensor left"></div>
-            <div class="notch-sensor right"></div>
-            
-            <!-- App Content Area -->
-            <div class="app-content" id="appContent">
+    <!-- App Content Area -->
+    <div class="app-content" id="appContent">
                 <!-- App Header -->
                 <div class="app-header">
                     <div class="header-top">
@@ -73,13 +82,136 @@
                         </div>
                     </div>
 
+                    <!-- Nearby Facilities -->
+                    <div class="section-header">
+                        <h2>Yakınındaki Tesisler</h2>
+                        <span class="see-all" data-action="view-all-facilities">Tümünü Gör</span>
+                    </div>
+
+                    <div class="facilities-list">
+                        <div class="facility-card" data-facility="1">
+                            <div class="facility-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                <span class="facility-type">⚽</span>
+                                <div class="status-badge available">Açık</div>
+                            </div>
+                            <div class="facility-info">
+                                <h3>Merkez Futbol Sahası</h3>
+                                <div class="facility-meta">
+                                    <span class="distance">📍 1.2 km</span>
+                                    <span class="rating">⭐ 4.8</span>
+                                </div>
+                                <div class="facility-details">
+                                    <span class="detail-badge">Çim</span>
+                                    <span class="detail-badge">Aydınlatma</span>
+                                    <span class="detail-badge">Soyunma</span>
+                                </div>
+                                <div class="facility-price">
+                                    <span class="price">₺150/saat</span>
+                                    <button class="reserve-btn" data-facility="1">Rezervasyon</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="facility-card" data-facility="2">
+                            <div class="facility-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                                <span class="facility-type">🏃</span>
+                                <div class="status-badge available">Açık</div>
+                            </div>
+                            <div class="facility-info">
+                                <h3>Kordon Koşu Yolu</h3>
+                                <div class="facility-meta">
+                                    <span class="distance">📍 0.8 km</span>
+                                    <span class="rating">⭐ 4.9</span>
+                                </div>
+                                <div class="facility-details">
+                                    <span class="detail-badge">5 km</span>
+                                    <span class="detail-badge">Deniz Manzarası</span>
+                                    <span class="detail-badge">Güvenli</span>
+                                </div>
+                                <div class="facility-price">
+                                    <span class="price">Ücretsiz</span>
+                                    <button class="reserve-btn" data-facility="2">Detay</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="facility-card" data-facility="3">
+                            <div class="facility-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                <span class="facility-type">🚴</span>
+                                <div class="status-badge maintenance">Bakım</div>
+                            </div>
+                            <div class="facility-info">
+                                <h3>Dağ Bisiklet Rotası</h3>
+                                <div class="facility-meta">
+                                    <span class="distance">📍 3.5 km</span>
+                                    <span class="rating">⭐ 4.7</span>
+                                </div>
+                                <div class="facility-details">
+                                    <span class="detail-badge">15 km</span>
+                                    <span class="detail-badge">Zorluk: Orta</span>
+                                    <span class="detail-badge warning">Bakımda</span>
+                                </div>
+                                <div class="facility-price">
+                                    <span class="price">Ücretsiz</span>
+                                    <button class="reserve-btn disabled" disabled>Yakında Açılacak</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="facility-card" data-facility="4">
+                            <div class="facility-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                                <span class="facility-type">🧗</span>
+                                <div class="status-badge available">Açık</div>
+                            </div>
+                            <div class="facility-info">
+                                <h3>İndoor Tırmanış Duvarı</h3>
+                                <div class="facility-meta">
+                                    <span class="distance">📍 2.1 km</span>
+                                    <span class="rating">⭐ 4.6</span>
+                                </div>
+                                <div class="facility-details">
+                                    <span class="detail-badge">12m Yükseklik</span>
+                                    <span class="detail-badge">Ekipman Var</span>
+                                    <span class="detail-badge">Eğitmen</span>
+                                </div>
+                                <div class="facility-price">
+                                    <span class="price">₺200/saat</span>
+                                    <button class="reserve-btn" data-facility="4">Rezervasyon</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="facility-card" data-facility="5">
+                            <div class="facility-image" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                                <span class="facility-type">🏀</span>
+                                <div class="status-badge available">Açık</div>
+                            </div>
+                            <div class="facility-info">
+                                <h3>Basketbol Sahası</h3>
+                                <div class="facility-meta">
+                                    <span class="distance">📍 0.5 km</span>
+                                    <span class="rating">⭐ 4.9</span>
+                                </div>
+                                <div class="facility-details">
+                                    <span class="detail-badge">Açık Hava</span>
+                                    <span class="detail-badge">Aydınlatma</span>
+                                    <span class="detail-badge">Parke</span>
+                                </div>
+                                <div class="facility-price">
+                                    <span class="price">₺120/saat</span>
+                                    <button class="reserve-btn" data-facility="5">Rezervasyon</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Today's Activities -->
                     <div class="section-header">
                         <h2>Bugünkü Aktiviteler</h2>
                     </div>
 
                     <div class="activities-scroll">
-                        <div class="activity-card">
+                        <div class="activity-card" data-activity="1">
                             <div class="activity-map">🗺️</div>
                             <div class="activity-info">
                                 <div class="activity-item">
@@ -93,7 +225,7 @@
                             </div>
                         </div>
 
-                        <div class="activity-card">
+                        <div class="activity-card" data-activity="2">
                             <div class="activity-map">🗺️</div>
                             <div class="activity-info">
                                 <div class="activity-item">
@@ -107,7 +239,7 @@
                             </div>
                         </div>
 
-                        <div class="activity-card">
+                        <div class="activity-card" data-activity="3">
                             <div class="activity-map">🗺️</div>
                             <div class="activity-info">
                                 <div class="activity-item">
@@ -119,143 +251,117 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Profile Page (Hidden by default) -->
-                <div class="page profile-page" id="profilePage" style="display: none;">
-                    <div class="page-header">
-                        <h2>Profil</h2>
-                    </div>
-                    <div class="profile-content">
-                        <div class="profile-avatar-large">
-                            <div class="avatar-circle">👤</div>
-                        </div>
-                        <h3>Ahmet Yılmaz</h3>
-                        <p class="profile-email">ahmet@example.com</p>
-                        
-                        <div class="profile-stats">
-                            <div class="stat-item">
-                                <div class="stat-number">12</div>
-                                <div class="stat-label">Rezervasyon</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">8</div>
-                                <div class="stat-label">Aktif Maç</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">4.8</div>
-                                <div class="stat-label">Puan</div>
-                            </div>
-                        </div>
-
-                        <div class="profile-menu">
-                            <div class="menu-item">
-                                <span class="menu-icon">📅</span>
-                                <span class="menu-text">Rezervasyonlarım</span>
-                                <span class="menu-arrow">›</span>
-                            </div>
-                            <div class="menu-item">
-                                <span class="menu-icon">⭐</span>
-                                <span class="menu-text">Değerlendirmelerim</span>
-                                <span class="menu-arrow">›</span>
-                            </div>
-                            <div class="menu-item">
-                                <span class="menu-icon">⚙️</span>
-                                <span class="menu-text">Ayarlar</span>
-                                <span class="menu-arrow">›</span>
-                            </div>
-                            <div class="menu-item">
-                                <span class="menu-icon">ℹ️</span>
-                                <span class="menu-text">Hakkında</span>
-                                <span class="menu-arrow">›</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Map Page (Hidden by default) -->
-                <div class="page map-page" id="mapPage" style="display: none;">
-                    <div class="page-header">
-                        <h2>Harita</h2>
-                    </div>
-                    <div class="map-content">
-                        <div class="map-placeholder">
-                            <span class="map-icon-large">🗺️</span>
-                            <p>Harita görünümü</p>
-                            <p class="map-subtitle">Yakınındaki tesisleri görüntüle</p>
-                        </div>
-                        <div class="map-filters">
-                            <button class="filter-btn active">Tümü</button>
-                            <button class="filter-btn">⚽ Futbol</button>
-                            <button class="filter-btn">🏀 Basketbol</button>
-                            <button class="filter-btn">🏃 Koşu</button>
-                            <button class="filter-btn">🚴 Bisiklet</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Messages Page (Hidden by default) -->
-                <div class="page messages-page" id="messagesPage" style="display: none;">
-                    <div class="page-header">
-                        <h2>Mesajlar</h2>
-                    </div>
-                    <div class="messages-content">
-                        <div class="message-item">
-                            <div class="message-avatar">👤</div>
-                            <div class="message-info">
-                                <div class="message-header">
-                                    <span class="message-name">Mehmet Kaya</span>
-                                    <span class="message-time">14:30</span>
+                        <div class="activity-card" data-activity="4">
+                            <div class="activity-map">🗺️</div>
+                            <div class="activity-info">
+                                <div class="activity-item">
+                                    <span class="activity-label">Tenis Maçı:</span>
+                                    <span class="activity-value">17:00</span>
                                 </div>
-                                <div class="message-preview">Maç için hazır mısın?</div>
-                            </div>
-                        </div>
-                        <div class="message-item">
-                            <div class="message-avatar">👤</div>
-                            <div class="message-info">
-                                <div class="message-header">
-                                    <span class="message-name">Ayşe Demir</span>
-                                    <span class="message-time">12:15</span>
+                                <div class="activity-item">
+                                    <span class="activity-label">Kort 3</span>
                                 </div>
-                                <div class="message-preview">Rezervasyon onaylandı!</div>
-                            </div>
-                        </div>
-                        <div class="message-item">
-                            <div class="message-avatar">👤</div>
-                            <div class="message-info">
-                                <div class="message-header">
-                                    <span class="message-name">Takım Alpha</span>
-                                    <span class="message-time">Dün</span>
-                                </div>
-                                <div class="message-preview">Yarın maç var, katılır mısın?</div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Team Page (Hidden by default) -->
-                <div class="page team-page" id="teamPage" style="display: none;">
-                    <div class="page-header">
-                        <h2>Takım</h2>
+                    <!-- Popular Facilities -->
+                    <div class="section-header">
+                        <h2>Popüler Tesisler</h2>
                     </div>
-                    <div class="team-content">
-                        <div class="team-card">
-                            <h3>Takımım</h3>
-                            <div class="team-members">
-                                <div class="member-avatar">👤</div>
-                                <div class="member-avatar">👤</div>
-                                <div class="member-avatar">👤</div>
-                                <div class="member-avatar">+5</div>
+
+                    <div class="facilities-list">
+                        <div class="facility-card" data-facility="6">
+                            <div class="facility-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                                <span class="facility-type">🏊</span>
+                                <div class="status-badge available">Açık</div>
+                            </div>
+                            <div class="facility-info">
+                                <h3>Olimpik Yüzme Havuzu</h3>
+                                <div class="facility-meta">
+                                    <span class="distance">📍 2.8 km</span>
+                                    <span class="rating">⭐ 4.9</span>
+                                </div>
+                                <div class="facility-details">
+                                    <span class="detail-badge">50m Havuz</span>
+                                    <span class="detail-badge">Isıtmalı</span>
+                                    <span class="detail-badge">Eğitmen</span>
+                                </div>
+                                <div class="facility-price">
+                                    <span class="price">₺180/saat</span>
+                                    <button class="reserve-btn" data-facility="6">Rezervasyon</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="team-section">
-                            <h3>Takım Arkadaşı Ara</h3>
-                            <button class="team-action-btn">Ara</button>
+
+                        <div class="facility-card" data-facility="7">
+                            <div class="facility-image" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                                <span class="facility-type">🎾</span>
+                                <div class="status-badge available">Açık</div>
+                            </div>
+                            <div class="facility-info">
+                                <h3>Tenis Kortları</h3>
+                                <div class="facility-meta">
+                                    <span class="distance">📍 1.5 km</span>
+                                    <span class="rating">⭐ 4.7</span>
+                                </div>
+                                <div class="facility-details">
+                                    <span class="detail-badge">4 Kort</span>
+                                    <span class="detail-badge">Aydınlatma</span>
+                                    <span class="detail-badge">Ekipman</span>
+                                </div>
+                                <div class="facility-price">
+                                    <span class="price">₺160/saat</span>
+                                    <button class="reserve-btn" data-facility="7">Rezervasyon</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="team-section">
-                            <h3>Rakip Takım Bul</h3>
-                            <button class="team-action-btn">Bul</button>
+
+                        <div class="facility-card" data-facility="8">
+                            <div class="facility-image" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+                                <span class="facility-type">🤸</span>
+                                <div class="status-badge available">Açık</div>
+                            </div>
+                            <div class="facility-info">
+                                <h3>Fitness & Pilates Salonu</h3>
+                                <div class="facility-meta">
+                                    <span class="distance">📍 0.9 km</span>
+                                    <span class="rating">⭐ 4.8</span>
+                                </div>
+                                <div class="facility-details">
+                                    <span class="detail-badge">Modern Ekipman</span>
+                                    <span class="detail-badge">Grup Dersleri</span>
+                                    <span class="detail-badge">Kişisel Antrenör</span>
+                                </div>
+                                <div class="facility-price">
+                                    <span class="price">₺250/ay</span>
+                                    <button class="reserve-btn" data-facility="8">Üyelik</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="section-header">
+                        <h2>Hızlı İşlemler</h2>
+                    </div>
+
+                    <div class="quick-actions">
+                        <div class="quick-action-card" data-action="equipment">
+                            <div class="quick-action-icon">👷</div>
+                            <h4>Ekipman Kiralama</h4>
+                            <p>Bisiklet, ekipman ve daha fazlası</p>
+                        </div>
+                        <div class="quick-action-card" data-action="lessons">
+                            <div class="quick-action-icon">📚</div>
+                            <h4>Online Dersler</h4>
+                            <p>Uzmanlardan online eğitim</p>
+                        </div>
+                        <div class="quick-action-card" data-action="events">
+                            <div class="quick-action-icon">📅</div>
+                            <h4>Etkinlikler</h4>
+                            <p>Yakındaki spor etkinlikleri</p>
                         </div>
                     </div>
                 </div>
@@ -349,11 +455,38 @@
                             <p class="map-subtitle">Yakınındaki tesisleri görüntüle</p>
                         </div>
                         <div class="map-filters">
-                            <button class="filter-btn active">Tümü</button>
-                            <button class="filter-btn">⚽ Futbol</button>
-                            <button class="filter-btn">🏀 Basketbol</button>
-                            <button class="filter-btn">🏃 Koşu</button>
-                            <button class="filter-btn">🚴 Bisiklet</button>
+                            <button class="filter-btn active" data-filter="all">Tümü</button>
+                            <button class="filter-btn" data-filter="football">⚽ Futbol</button>
+                            <button class="filter-btn" data-filter="basketball">🏀 Basketbol</button>
+                            <button class="filter-btn" data-filter="running">🏃 Koşu</button>
+                            <button class="filter-btn" data-filter="cycling">🚴 Bisiklet</button>
+                            <button class="filter-btn" data-filter="climbing">🧗 Tırmanış</button>
+                        </div>
+                        <div class="map-facilities-list">
+                            <div class="map-facility-item" data-type="football">
+                                <div class="map-facility-icon">⚽</div>
+                                <div class="map-facility-info">
+                                    <h4>Merkez Futbol Sahası</h4>
+                                    <p>📍 1.2 km • ⭐ 4.8</p>
+                                </div>
+                                <button class="map-view-btn">Görüntüle</button>
+                            </div>
+                            <div class="map-facility-item" data-type="basketball">
+                                <div class="map-facility-icon">🏀</div>
+                                <div class="map-facility-info">
+                                    <h4>Basketbol Sahası</h4>
+                                    <p>📍 0.5 km • ⭐ 4.9</p>
+                                </div>
+                                <button class="map-view-btn">Görüntüle</button>
+                            </div>
+                            <div class="map-facility-item" data-type="running">
+                                <div class="map-facility-icon">🏃</div>
+                                <div class="map-facility-info">
+                                    <h4>Kordon Koşu Yolu</h4>
+                                    <p>📍 0.8 km • ⭐ 4.9</p>
+                                </div>
+                                <button class="map-view-btn">Görüntüle</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -364,7 +497,7 @@
                         <h2>Mesajlar</h2>
                     </div>
                     <div class="messages-content">
-                        <div class="message-item">
+                        <div class="message-item" data-message="1">
                             <div class="message-avatar">👤</div>
                             <div class="message-info">
                                 <div class="message-header">
@@ -373,8 +506,9 @@
                                 </div>
                                 <div class="message-preview">Maç için hazır mısın?</div>
                             </div>
+                            <span class="message-unread">1</span>
                         </div>
-                        <div class="message-item">
+                        <div class="message-item" data-message="2">
                             <div class="message-avatar">👤</div>
                             <div class="message-info">
                                 <div class="message-header">
@@ -384,7 +518,7 @@
                                 <div class="message-preview">Rezervasyon onaylandı!</div>
                             </div>
                         </div>
-                        <div class="message-item">
+                        <div class="message-item" data-message="3">
                             <div class="message-avatar">👤</div>
                             <div class="message-info">
                                 <div class="message-header">
@@ -392,6 +526,26 @@
                                     <span class="message-time">Dün</span>
                                 </div>
                                 <div class="message-preview">Yarın maç var, katılır mısın?</div>
+                            </div>
+                        </div>
+                        <div class="message-item" data-message="4">
+                            <div class="message-avatar">👤</div>
+                            <div class="message-info">
+                                <div class="message-header">
+                                    <span class="message-name">Can Özkan</span>
+                                    <span class="message-time">Dün</span>
+                                </div>
+                                <div class="message-preview">Ekipman kiralama hakkında soru var</div>
+                            </div>
+                        </div>
+                        <div class="message-item" data-message="5">
+                            <div class="message-avatar">👤</div>
+                            <div class="message-info">
+                                <div class="message-header">
+                                    <span class="message-name">Zeynep Yıldız</span>
+                                    <span class="message-time">2 gün önce</span>
+                                </div>
+                                <div class="message-preview">Antrenör buldum, tanışmak ister misin?</div>
                             </div>
                         </div>
                     </div>
@@ -414,20 +568,27 @@
                         </div>
                         <div class="team-section">
                             <h3>Takım Arkadaşı Ara</h3>
-                            <button class="team-action-btn">Ara</button>
+                            <p class="section-description">Seviyene uygun takım arkadaşı bul</p>
+                            <button class="team-action-btn" data-action="find-teammate">Ara</button>
                         </div>
                         <div class="team-section">
                             <h3>Rakip Takım Bul</h3>
-                            <button class="team-action-btn">Bul</button>
+                            <p class="section-description">Maç yapmak için rakip takım bul</p>
+                            <button class="team-action-btn" data-action="find-opponent">Bul</button>
+                        </div>
+                        <div class="team-section">
+                            <h3>Antrenör Bul</h3>
+                            <p class="section-description">Online veya yüz yüze ders al</p>
+                            <button class="team-action-btn" data-action="find-trainer">Ara</button>
+                        </div>
+                        <div class="team-section">
+                            <h3>Rakip Bul</h3>
+                            <p class="section-description">Bireysel spor için rakip bul</p>
+                            <button class="team-action-btn" data-action="find-opponent-individual">Ara</button>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- iPhone Home Indicator -->
-            <div class="home-indicator"></div>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
