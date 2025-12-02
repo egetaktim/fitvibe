@@ -559,6 +559,24 @@ body {
     -webkit-overflow-scrolling: touch !important;
 }
 
+/* Mobile devices - position above browser UI */
+@media (max-width: 768px) {
+    .bottom-nav {
+        bottom: 0 !important;
+        /* Add extra padding to account for browser bar */
+        margin-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    
+    /* For iOS Safari specifically */
+    @supports (-webkit-touch-callout: none) {
+        .bottom-nav {
+            /* Position above Safari's bottom bar (typically 44-50px) */
+            bottom: 0 !important;
+            padding-bottom: calc(25px + env(safe-area-inset-bottom, 0px) + 50px) !important;
+        }
+    }
+}
+
 .nav-item {
     display: flex;
     flex-direction: column;
