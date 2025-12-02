@@ -52,6 +52,12 @@ body {
     padding-bottom: calc(80px + env(safe-area-inset-bottom, 0));
 }
 
+@media (max-width: 768px) {
+    .app-content {
+        padding-bottom: calc(130px + env(safe-area-inset-bottom, 0));
+    }
+}
+
 /* Header Styles */
 .app-header {
     background: #1a1a1a;
@@ -548,6 +554,13 @@ body {
     z-index: 200;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
     width: 100%;
+}
+
+/* Mobile - position above browser bar */
+@media (max-width: 768px) {
+    .bottom-nav {
+        bottom: 50px;
+    }
 }
 
 .nav-item {
